@@ -1,7 +1,7 @@
-CC = clang++
-SRC = Contact.cpp  PhoneBook.cpp main.cpp 
+CC = c++
+SRC =  main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = phonebook
+NAME = Human
 
 all: $(NAME)
 
