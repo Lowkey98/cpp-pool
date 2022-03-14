@@ -1,7 +1,7 @@
 #include "Weapon.hpp"
 
 const std::string & Weapon::getType(){
-    const std::string & typeRef = this->type;
+    // const std::string & typeRef = this->type;
     return (this->type);
 }
 
