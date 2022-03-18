@@ -1,16 +1,19 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
+#define CAPACITY 3
+
 #include <iomanip>
 #include "Contact.hpp"
-
+#include <limits>
 class PhoneBook{
 
     private:
         size_t mNumberOfContact;
-        Contact ContactList[8];
+        size_t mOldestIndex;
+        Contact ContactList[CAPACITY];
         void DisplayContacts() const;
         void DisplayContact(Contact contact) const;
-
+        std::string frmtStr(std::string str) const;
     public:
         PhoneBook();
         void add();
