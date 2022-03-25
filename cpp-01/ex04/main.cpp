@@ -1,40 +1,25 @@
-#include <iostream>
-#include <fstream>
 
-int main(int argc, char const *argv[])
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+int main()
 {
-    if (argc != 4)
     {
-        std::cerr << "need 3 arguments" << std::endl;
-        return (1);
-    }
-    std::ifstream InputFile;
-    std::ofstream OutputFile;
-    std::string line;
+        Weapon club = Weapon("crude spiked club");
 
-    std::string OutputName = (std::string)argv[1] + ".replace";
-    InputFile.open(argv[1], std::ios::in);
-    OutputFile.open(OutputName.c_str(), std::ios::out);
-    while (getline(InputFile, line))
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
     {
-        for(size_t i = 0; i < line.length(); i++)
-        {
-            int index = line.substr(i, line.length()).find(argv[2]);
-            if (index == -1){
-                OutputFile << line.substr(i, line.length() - i);
-                break;
-            }
-            else{
-                OutputFile << line.substr(i, index);
-                OutputFile << argv[3];
-            }
-            i = i + index + ((std::string)argv[2]).length() - 1;
-        }
-        // OutputFile << line.substr(0, line.find(argv[1]));
+        Weapon club = Weapon("crude spiked club");
 
-        OutputFile << std::endl;
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
     }
-    InputFile.close();
-    OutputFile.close();
-    return 0;
+    // std::cout << << std::endl;
+
 }
