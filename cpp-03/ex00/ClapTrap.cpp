@@ -78,6 +78,6 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "Don't have any hit points left" << std::endl;
         return ;
     }
-    std::cout << "clapTrap " << this->_name << " got " << this->_hit_points << "hit points back" << std::endl;
+    std::cout << "clapTrap " << this->_name << " got " << this->_hit_points << " hit points back" << std::endl;
     this->_hit_points += amount;
 }
