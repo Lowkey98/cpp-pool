@@ -1,1 +1,0 @@
-Just imagine that classes dont exist. There is only functions and variables. But when who make a function inside a class it is like you make a normal function but invisibly pass those variables within the class to that function.

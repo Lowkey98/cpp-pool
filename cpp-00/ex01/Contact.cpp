@@ -1,22 +1,22 @@
 #include "Contact.hpp"
 
 std::string Contact::getFirstName() const{
-    return (this->mFirstName);
+    return (this->_FirstName);
 }
 
 std::string Contact::getLastName() const{
-    return (this->mLastName);
+    return (this->_LastName);
 }
 
 std::string Contact::getNickName() const{
-    return (this->mNickName);
+    return (this->_NickName);
 }
 
 std::string Contact::getPhoneNumber() const{
-    return (this->mPhoneNumber);
+    return (this->_PhoneNumber);
 }
 std::string Contact::getDarkestSecret() const{
-    return (this->mDarkestSecret);
+    return (this->_DarkestSecret);
 }
 
 Contact::Contact(void)
@@ -26,9 +26,9 @@ Contact::Contact(std::string FirstName,
             std::string NickName,
             std::string PhoneNumber,
             std::string DarkestSecret){
-                this->mFirstName = FirstName;
-                this->mLastName = LastName;
-                this->mNickName = NickName;
-                this->mPhoneNumber = PhoneNumber;
-                this->mDarkestSecret = DarkestSecret;
+                this->_FirstName = FirstName;
+                this->_LastName = LastName;
+                this->_NickName = NickName;
+                this->_PhoneNumber = PhoneNumber;
+                this->_DarkestSecret = DarkestSecret;
             }
