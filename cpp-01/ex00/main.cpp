@@ -1,17 +1,19 @@
 # include "Zombie.hpp"
-Zombie* newZombie( std::string name){
-    return (new Zombie(name));
+Zombie* newZombie( std::string name)
+{
+	return (new Zombie(name));
 }
 
-void randomChump( std::string name){
-    Zombie z(name);
-    z.announce();
+void randomChump( std::string name)
+{
+	Zombie z(name);
+	z.announce();
 }
 
 int main()
 {
-    randomChump("said");
-    Zombie *zombie_ptr = newZombie("ayoub");
-    zombie_ptr->announce();
-    delete zombie_ptr;
+	randomChump("malokich");
+	Zombie *zombie_ptr = newZombie("maloki");
+	zombie_ptr->announce();
+	delete zombie_ptr;
 }

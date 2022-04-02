@@ -1,7 +1,7 @@
 CC = c++
-SRC =  main.cpp Karen.cpp Karen.hpp
+SRC =  main.cpp Harl.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Karen
+NAME = Harl
 
 all: $(NAME)
 
