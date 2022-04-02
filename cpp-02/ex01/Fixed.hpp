@@ -1,8 +1,11 @@
+#if !defined(FIXED_HPP)
+#define FIXED_HPP
+
 #include <iostream>
 #include <cmath>
 class Fixed{
     private: 
-        int _fixed_n;
+        int _fixed;
         static const int _n_fraction = 8;
     public:
         Fixed();
@@ -18,3 +21,5 @@ class Fixed{
         int toInt( void ) const;
 };
 std::ostream& operator<< (std::ostream &os, const Fixed &f1);
+
+#endif // FIXED_HPP

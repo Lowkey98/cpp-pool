@@ -1,12 +1,12 @@
 CC = c++
-SRC =  main.cpp Fixed.cpp Fixed.hpp
+SRC =  main.cpp Fixed.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = a.out
+NAME = fixed
 
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC) 
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	rm -rf $(NAME)
