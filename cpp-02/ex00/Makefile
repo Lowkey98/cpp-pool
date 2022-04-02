@@ -1,7 +1,7 @@
 CC = c++
-SRC =  main.cpp Fixed.cpp Fixed.hpp
+SRC =  main.cpp Fixed.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = a.out
+NAME = Fixed
 
 all: $(NAME)
 
