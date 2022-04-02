@@ -23,3 +23,9 @@ Brain& Brain::operator=(const Brain& other)
     }
     return *this;
 }
+
+// desturctor
+Brain::~Brain()
+{
+    std::cout << "Brain Destructor" << std::endl;
+}
