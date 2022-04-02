@@ -1,8 +1,10 @@
+#if !defined(ZOMBIE_HPP)
+#define ZOMBIE_HPP
+
 #include <string>
 #include <iostream>
-
-
-class Zombie {
+class Zombie
+{
     private:
         std::string name;
     public:
@@ -14,3 +16,5 @@ class Zombie {
 };
 
 Zombie* zombieHorde(int N, std::string name);
+
+#endif // ZOMBIE_HPP

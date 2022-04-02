@@ -1,6 +1,6 @@
 # include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) : mNumberOfContact(0) , mOldestIndex(0)
+PhoneBook::PhoneBook(void) : _NumberOfContact(0) , _OldestIndex(0)
 {
 
 }
@@ -23,12 +23,12 @@ void    PhoneBook::add(){
     std::cin >> DarkestSecret;
 
     Contact contact(FirstName, LastName, NickName, PhoneNumber, DarkestSecret);
-    if (mOldestIndex == CAPACITY)
-        mOldestIndex = 0;
-    this->ContactList[mOldestIndex] = contact;
-    mOldestIndex++;
-    if (mNumberOfContact < CAPACITY)
-        mNumberOfContact++;
+    if (_OldestIndex == CAPACITY)
+        _OldestIndex = 0;
+    this->ContactList[_OldestIndex] = contact;
+    _OldestIndex++;
+    if (_NumberOfContact < CAPACITY)
+        _NumberOfContact++;
     
 }
 std::string PhoneBook::frmtStr(std::string str) const{
@@ -43,11 +43,11 @@ std::string PhoneBook::frmtStr(std::string str) const{
     return (str);
 }
 void PhoneBook::DisplayContacts() const{
-    for(size_t i = 0; i < this->mNumberOfContact; i++){
+    for(size_t i = 0; i < this->_NumberOfContact; i++){
         std::cout << i << "|";
-        std::cout << std::setw(10) << frmtStr(this->ContactList[i].getFirstName())<< "|";
-        std::cout << std::setw(10) << frmtStr(this->ContactList[i].getLastName()) << "|";
-        std::cout << std::setw(10) << frmtStr(this->ContactList[i].getNickName())  << std::endl;
+        std::cout << std::right << std::setw(10) << frmtStr(this->ContactList[i].getFirstName())<< "|";
+        std::cout << std::right << std::setw(10) << frmtStr(this->ContactList[i].getLastName()) << "|";
+        std::cout << std::right << std::setw(10) << frmtStr(this->ContactList[i].getNickName())  << std::endl;
     }
 }
 void PhoneBook::DisplayContact(Contact contact) const{
@@ -65,15 +65,13 @@ void PhoneBook::search() const{
         std::cin >> index;
         if (std::cin.fail())
         {
-            std::cout << "Enter an integer" << std::endl;
-            // clear error state
+            std::cout << "Enter an index" << std::endl;
             std::cin.clear();
-            // discard 'bad' character(s)
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             continue;
         }
         
-        if (index < mNumberOfContact && index >= 0)
+        if (index < _NumberOfContact && index >= 0)
             break;
         std::cout << "Index out of range, insert another one" << std::endl;
     }
