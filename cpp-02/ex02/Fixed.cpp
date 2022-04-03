@@ -1,16 +1,19 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(){
+Fixed::Fixed()
+{
     this->_fixed_n = 0;
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &f1){
+Fixed::Fixed(Fixed const &f1)
+{
     std::cout << "Copy constructor called" << std::endl;
-    this->_fixed_n = f1._fixed_n;
+    *this = f1;
 }
 
-Fixed& Fixed::operator =(const Fixed  &f1){
+Fixed& Fixed::operator =(const Fixed  &f1)
+{
     std::cout << "Copy assignment operator called" << std::endl;
     this->_fixed_n = f1.getRawBits();
     return(*this);
@@ -22,45 +25,54 @@ std::ostream& operator<< (std::ostream &os, const Fixed  &f1)
     os << f1.toFloat();
     return(os);
 }
+
 void Fixed::setRawbits( int const raw)
 {
     this->_fixed_n = raw;
 }
 
-int Fixed::getRawBits() const{
+int Fixed::getRawBits() const
+{
     std::cout << "getRawBits member function called" << std::endl;
     return(this->_fixed_n);
 }
 
-Fixed::~Fixed(){
+Fixed::~Fixed()
+{
     std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::toInt( void ) const {
+int Fixed::toInt( void ) const
+{
     return (this->_fixed_n >> 8);
 }
 Fixed::Fixed(const int n)
 {
     std::cout << "Int contructor called" << std::endl;
-    this->_fixed_n = n << 8;
+    this->_fixed_n = n << _n_fraction;
 }
 
-Fixed::Fixed(const float f){
+Fixed::Fixed(const float f)
+{
     std::cout << "Float constructor called" << std::endl;
-    this->_fixed_n = f * pow(2, Fixed::_n_fraction);
+    this->_fixed_n = roundf(f * pow(2, Fixed::_n_fraction));
 }
 
-float Fixed::toFloat( void ) const {
+float Fixed::toFloat( void ) const
+{
     return (this->_fixed_n * pow(2,-1 * Fixed::_n_fraction));
 }
+
 int Fixed::operator > (const Fixed &f1)
 {
     return (this->getRawBits() > f1.getRawBits());
 }
+
 int Fixed::operator < (const Fixed &f1)
 {
     return (this->getRawBits() < f1.getRawBits());
 }
+
 int Fixed::operator >= (const Fixed &f1)
 {
     return (this->getRawBits() >= f1.getRawBits());
@@ -98,11 +110,6 @@ Fixed Fixed::operator / (const Fixed &f1)
 {
     return Fixed(this->toFloat() / f1.toFloat());
 }
-
-// std::ostream& Fixed::operator << (std::ostream &st){
-//     st << toFloat() << std::endl;
-//     return (st);
-// }
 
 Fixed &Fixed::min(Fixed &f1, Fixed &f2)
 {
