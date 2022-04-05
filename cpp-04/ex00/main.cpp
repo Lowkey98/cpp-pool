@@ -4,20 +4,26 @@
 #include "Dog.hpp"
 #include "Animal.hpp"
 #include "WrongAnimal.hpp"
-
+#include <stdlib.h>
 #include <iostream>
 
 int main()
 {
-    WrongAnimal *a = new WrongAnimal("WrongAnimal");
-    a->makeSound();
-    std::cout << a->getType() << std::endl;
-    Animal *d = new Dog("Dog");
-    d->makeSound();
-    std::cout << d->getType() << std::endl;
-    WrongAnimal *c = new WrongCat("Cat");
-    c->makeSound();
-    // std::cout << c->getType() << std::endl;
+    {
+        Animal animal;
+        std::cout << animal.getType() << std::endl;
+        Animal *ptr_cat = new Cat();
+        std::cout << ptr_cat->getType() << std::endl;
+        Animal *ptr_dog = new Dog();
+        std::cout << ptr_dog->getType() << std::endl;
+        animal.makeSound();
+        ptr_cat->makeSound();
+        ptr_dog->makeSound();
+        delete ptr_cat;
+        delete ptr_dog;
+    }
+    WrongAnimal *wr_prt_cat = new WrongCat();
+    wr_prt_cat->makeSound();
     return 0;
 }
 
