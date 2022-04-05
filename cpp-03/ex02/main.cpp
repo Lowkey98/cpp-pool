@@ -1,10 +1,9 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 int main( void )
 {
-    ScavTrap Ankara("Messi");
-    ClapTrap cristop("Suiii");
-    Ankara.attack("Suiiii");
-    cristop.beRepaired(1);
-    return 0;
+    FragTrap Ankara("Messi");
+    Ankara.attack("lakkaa");
+    Ankara.beRepaired(1);
+    Ankara.highFivesGuys();
     return (0);
 }
