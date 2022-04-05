@@ -18,7 +18,7 @@ int main()
         try
         {
             Bureaucrat b1("b1", 1);
-            std::cout << b1.getGrade() << std::endl;
+            std::cout << b1 << std::endl;
             b1.incrementGrade();
         }
         catch(const std::exception& e)
@@ -26,6 +26,5 @@ int main()
             std::cerr << e.what() << '\n';
         }
     }
-
     return 0;
 }
