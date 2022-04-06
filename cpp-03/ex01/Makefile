@@ -1,12 +1,12 @@
 CC = c++
-SRC =  main.cpp ClapTrap.cpp ClapTrap.hpp ScavTrap.cpp ScavTrap.hpp
+SRC =  main.cpp ClapTrap.cpp ScavTrap.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = a.out
+NAME = ScavTrap
 
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC) 
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	rm -rf $(NAME)

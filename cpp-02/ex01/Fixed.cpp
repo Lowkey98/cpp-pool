@@ -38,12 +38,12 @@ Fixed::Fixed(const float f)
 
 float Fixed::toFloat( void ) const 
 {
-    return ( this->_fixed / pow(2, Fixed::_n_fraction) );
+    return ( this->_fixed * pow(2, -1 * Fixed::_n_fraction) );
 }
 
 int Fixed::toInt( void ) const 
 {
-    return (this->_fixed >> 8);
+    return (this->_fixed >> _n_fraction);
 }
 
 std::ostream& operator<< (std::ostream &os, const Fixed  &f1)

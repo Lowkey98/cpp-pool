@@ -1,4 +1,3 @@
-// main function that tests makeSound function for  class animal and  dog and cat with pointers pointing on Animal and print each of their type
 #include "Cat.hpp"
 #include "Dog.hpp"
 

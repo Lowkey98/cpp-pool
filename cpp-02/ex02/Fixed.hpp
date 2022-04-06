@@ -1,3 +1,6 @@
+#if !defined(FIXED_HPP)
+#define FIXED_HPP
+
 #include <iostream>
 #include <cmath>
 class Fixed{
@@ -37,3 +40,5 @@ class Fixed{
         Fixed operator --(int);
 };
 std::ostream& operator<< (std::ostream &os, const Fixed &f1);
+
+#endif // FIXED_HPP

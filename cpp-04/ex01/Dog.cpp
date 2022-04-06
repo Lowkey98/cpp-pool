@@ -30,6 +30,7 @@ Dog& Dog::operator=(const Dog& d)
 // destructor
 Dog::~Dog()
 {
+    delete this->b_ptr;
     std::cout << "Dog destructor" << std::endl;
 }
 
