@@ -9,10 +9,9 @@ class WrongAnimal
         WrongAnimal();
         WrongAnimal(const WrongAnimal& a);
         WrongAnimal& operator=(const WrongAnimal& a);
-        ~WrongAnimal();
-        WrongAnimal(std::string type);
+        virtual ~WrongAnimal();
         std::string getType();
-        virtual void makeSound();
+        void makeSound();
 };
 
 #endif // WRONGANIMAL_HPP

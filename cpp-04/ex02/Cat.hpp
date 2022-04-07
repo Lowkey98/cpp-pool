@@ -1,17 +1,16 @@
 #if !defined(CAT_HPP)
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
     public:
         Cat();
         Cat(const Cat& c);
         Cat& operator=(const Cat& c);
         ~Cat();
-        Cat(std::string type);
         void    makeSound();
     private:
         Brain *b_ptr;

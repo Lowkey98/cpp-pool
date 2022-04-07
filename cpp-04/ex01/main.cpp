@@ -4,8 +4,8 @@
 int main()
 {
     Animal *animal_array[2];
-    animal_array[0] = new Dog("dog");   
-    animal_array[1] = new Cat("cat");
+    animal_array[0] = new Dog();   
+    animal_array[1] = new Cat();
     for (int i = 0; i < 2; i++)
     {
         animal_array[i]->makeSound();

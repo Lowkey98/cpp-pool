@@ -11,7 +11,6 @@ class Cat : public Animal
         Cat(const Cat& c);
         Cat& operator=(const Cat& c);
         ~Cat();
-        Cat(std::string type);
         void    makeSound();
     private:
         Brain *b_ptr;

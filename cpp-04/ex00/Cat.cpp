@@ -6,7 +6,7 @@ Cat::Cat()
     this->type = "Cat";
     std::cout << "Cat default constructor" << std::endl;
 }
-// copy constructor
+
 Cat::Cat(const Cat& c)
 {
     *this = c;
