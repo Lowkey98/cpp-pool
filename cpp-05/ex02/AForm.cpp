@@ -74,7 +74,7 @@ const char * AForm::NotSignedException::what() const throw()
 
 void    AForm::beSigned(Bureaucrat const &b)
 {
-	if (b.getGrade() < this->_grade_to_sign)
+	if (b.getGrade() > this->_grade_to_sign)
 		throw AForm::GradeTooLowException();
 	this->_signed = true;
 }

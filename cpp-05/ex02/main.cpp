@@ -32,11 +32,25 @@ int main()
     // r1.beSigned(Bureaucrat("Bob", 150));
     // r1.execute(Bureaucrat("Bob", 4));
 
+    // try
+    // {
+    //     ShrubberyCreationForm s1("gish");
+    //     s1.beSigned(Bureaucrat("Bob", 147));
+    //     s1.execute(Bureaucrat("Bob", 136));
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+    
     try
     {
-        ShrubberyCreationForm s1("gish");
-        s1.beSigned(Bureaucrat("Bob", 147));
-        s1.execute(Bureaucrat("Bob", 136));
+        Bureaucrat b1("Bob", 1);
+        // print grade 
+        std::cout << b1 << std::endl;
+        PresidentialPardonForm s1("Tree");
+        b1.signForm(s1);
+        b1.executeForm(s1);
     }
     catch(const std::exception& e)
     {
