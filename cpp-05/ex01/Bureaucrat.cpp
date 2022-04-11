@@ -1,5 +1,5 @@
+// #include "Bureaucrat.hpp"
 #include "Bureaucrat.hpp"
-
 
 Bureaucrat::Bureaucrat()
 {
@@ -73,10 +73,22 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
     return ("Grade too low");
 }
-// << operator overload to print name and grade
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &b)
 {
     out << b.getName() << ", bureaucrat grade " << b.getGrade();
     return (out);
+}
+
+void    Bureaucrat::signForm(Form &f) const
+{
+    if (f.getSigned())
+        std::cout << this->_name << " couldn't sign " << f.getName() << " because it is already signed" << std::endl;
+    else if (this->_grade < f.getGradeToSign())
+        std::cout << this->_name << " couldn't sign " << f.getName() << " because grade is too low" << std::endl;
+    else
+    {
+        f.beSigned(*this);
+        std::cout << this->_name << " signs " << f.getName() << std::endl;
+    }
 }
 

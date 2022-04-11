@@ -1,3 +1,7 @@
+#if !defined(BUREAUCRAT_HPP)
+#define BUREAUCRAT_HPP
+
+
 #include <iostream>
 
 class Bureaucrat
@@ -7,7 +11,6 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat const &b1);
 		Bureaucrat &operator=(Bureaucrat const &b1);
 		~Bureaucrat();
-
 		Bureaucrat(std::string const &name, int grade);
 		std::string	getName() const;
 		int		getGrade() const;
@@ -29,3 +32,4 @@ class Bureaucrat
 };
 // << operator overload to print name and grade
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &b);
+#endif // BUREAUCRAT_HPP

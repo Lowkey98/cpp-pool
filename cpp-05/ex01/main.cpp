@@ -7,7 +7,9 @@ int main()
     {
         try
         {
-            Bureaucrat b2("b2", 1500);
+            // Form b2;
+            Form b3("b3", -1, 210);
+            std::cout << b3 << std::endl;
         }
         catch(const std::exception& e)
         {
@@ -17,9 +19,8 @@ int main()
     {
         try
         {
-            Bureaucrat b1("b1", 1);
-            std::cout << b1 << std::endl;
-            b1.incrementGrade();
+            Form b1;
+            // std::cout << b1 << std::endl;
         }
         catch(const std::exception& e)
         {
