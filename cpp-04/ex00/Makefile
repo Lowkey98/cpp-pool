@@ -1,12 +1,12 @@
 CC = c++
-SRC =   main.cpp Animal.cpp Animal.hpp Dog.cpp Dog.hpp Cat.cpp Cat.hpp WrongAnimal.cpp WrongAnimal.hpp WrongCat.cpp WrongCat.hpp
+SRC =   main.cpp Animal.cpp  Dog.cpp  Cat.cpp  WrongAnimal.cpp  WrongCat.cpp 
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = a.out
+NAME = animal
 
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC) 
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	rm -rf $(NAME)

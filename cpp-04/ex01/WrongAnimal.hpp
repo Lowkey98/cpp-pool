@@ -3,16 +3,15 @@
 #include <iostream>
 class WrongAnimal
 {
-    protected:
-        std::string type;
     public:
         WrongAnimal();
         WrongAnimal(const WrongAnimal& a);
         WrongAnimal& operator=(const WrongAnimal& a);
-        ~WrongAnimal();
-        WrongAnimal(std::string type);
+        virtual ~WrongAnimal();
         std::string getType();
-        virtual void makeSound();
+        void makeSound();
+    protected:
+        std::string type;
 };
 
 #endif // WRONGANIMAL_HPP

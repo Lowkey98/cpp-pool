@@ -14,6 +14,3 @@ class WrongCat : public WrongAnimal
 };
 
 #endif // CAT_HPP
-
-
-

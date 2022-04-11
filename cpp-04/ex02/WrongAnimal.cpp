@@ -1,9 +1,9 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(std::string type)
+WrongAnimal::WrongAnimal()
 {
-    this->type = type;
-    std::cout << "WrongAnimal type constructor" << std::endl;
+    this->type = "WrongAnimal";
+    std::cout << "WrongAnimal default constructor" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& a)
@@ -24,17 +24,11 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& a)
     return *this;
 }
 
-WrongAnimal::WrongAnimal()
-{
-    std::cout << "WrongAnimal default constructor" << std::endl;
-}
-// WrongAnimal makeSound function
 void WrongAnimal::makeSound()
 {
     std::cout << "WrongAnimal makeSound function" << std::endl;
 }
 
-// WrongAnimal destructor
 WrongAnimal::~WrongAnimal()
 {
     std::cout << "WrongAnimal destructor" << std::endl;
