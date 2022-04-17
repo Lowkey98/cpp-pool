@@ -7,24 +7,16 @@ int main()
     {
         try
         {
-            // Form b2;
-            Form b3("b3", -1, 210);
-            std::cout << b3 << std::endl;
+            Form f1("f1", 50, 150);
+            std::cout << f1 << std::endl;
+            // f1.beSigned(Bureaucrat("b1", 60));
+            f1.beSigned(Bureaucrat("b1", 10));
+            Bureaucrat b2("b2", 50);
+            b2.signForm(f1);
         }
         catch(const std::exception& e)
         {
-            std::cerr << e.what() << '\n';
-        }
-    }
-    {
-        try
-        {
-            Form b1;
-            // std::cout << b1 << std::endl;
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
+            std::cerr << e.what() << std::endl;
         }
     }
     return 0;

@@ -10,53 +10,38 @@ int main()
     // {
     //     try
     //     {
-    //         PresidentialPardonForm p1("liza");
-    //         p1.execute(Bureaucrat("Bob", 1));
+    //         ShrubberyCreationForm p1("liza");
+    //         p1.beSigned(Bureaucrat("Bob", 145));
+    //         p1.execute(Bureaucrat("Bob", 137));
     //     }catch(std::exception &e)
     //     {
     //         std::cout << e.what() << std::endl;
     //     }
     // }
+    // std::cout << "==================================================" << std::endl;
     // {
     //     try
     //     {
-    //         PresidentialPardonForm p1("liza");
-    //         p1.beSigned(Bureaucrat("Bob", 150));
-    //         p1.execute(Bureaucrat("Bob", 4));
+    //         RobotomyRequestForm p1("liza");
+    //         p1.beSigned(Bureaucrat("Bob", 72));
+    //         p1.execute(Bureaucrat("Bob", 46));
     //     }catch(std::exception &e)
     //     {
     //         std::cout << e.what() << std::endl;
     //     }
     // }
-    // RobotomyRequestForm r1("liza");
-    // r1.beSigned(Bureaucrat("Bob", 150));
-    // r1.execute(Bureaucrat("Bob", 4));
-
-    // try
-    // {
-    //     ShrubberyCreationForm s1("gish");
-    //     s1.beSigned(Bureaucrat("Bob", 147));
-    //     s1.execute(Bureaucrat("Bob", 136));
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << e.what() << '\n';
-    // }
-    
-    try
+    std::cout << "==================================================" << std::endl;
     {
-        Bureaucrat b1("Bob", 1);
-        // print grade 
-        std::cout << b1 << std::endl;
-        PresidentialPardonForm s1("Tree");
-        b1.signForm(s1);
-        b1.executeForm(s1);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
+        try
+        {
+            PresidentialPardonForm p1("liza");
+            p1.beSigned(Bureaucrat("Bob", 25));
+            p1.execute(Bureaucrat("Bob", 5));
+        }catch(std::exception &e)
+        {
+            std::cout << e.what() << std::endl;
+        }
+    }  
 
     return 0;
 }

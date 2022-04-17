@@ -13,7 +13,6 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &ppf
     *this = ppf;
     std::cout << "PresidentialPardonForm Copy Contructor" << std::endl;
 }
-// copy assignment
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &ppf)
 {
     this->_target = ppf._target;

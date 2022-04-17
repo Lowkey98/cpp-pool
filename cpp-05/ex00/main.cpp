@@ -4,6 +4,10 @@
 #include "Bureaucrat.hpp"
 int main()
 {
+    Bureaucrat a;
+    std::cout << a.getGrade() << std::endl;
+    a.getGrade();
+
     {
         try
         {
@@ -14,6 +18,7 @@ int main()
             std::cerr << e.what() << '\n';
         }
     }
+    std::cout << " ============================================== " << std::endl;
     {
         try
         {

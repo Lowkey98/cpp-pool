@@ -3,9 +3,10 @@
 
 Bureaucrat::Bureaucrat()
 {
+    this->_grade = 150;
     std::cout << "Bureaucrat default constructor called" << std::endl;
 }
-// Copy constructor
+
 Bureaucrat::Bureaucrat(Bureaucrat const &b1)
 {
     std::cout << "Bureaucrat copy constructor called" << std::endl;
@@ -16,11 +17,9 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &b1)
 {
     std::cout << "Bureaucrat assignment operator called" << std::endl;
     this->_grade = b1._grade;
-    // this->_name = b1._name;
     return (*this);
 }
 
-// constructor
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 {
     if (grade < 1)
@@ -31,7 +30,7 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
         this->_grade = grade;
     std::cout << "Bureaucrat " << this->_name << " constructed with grade " << this->_grade << std::endl;
 }
-// incerement grade but throw exception
+
 void Bureaucrat::incrementGrade()
 {
     if (this->_grade == 1)
@@ -39,7 +38,7 @@ void Bureaucrat::incrementGrade()
     else
         this->_grade--;
 }
-// decrement grade but throw exception
+
 void Bureaucrat::decrementGrade()
 {
     if (this->_grade == 150)
@@ -47,7 +46,7 @@ void Bureaucrat::decrementGrade()
     else
         this->_grade++;
 }
-// getter for grade
+
 int Bureaucrat::getGrade() const
 {
     return this->_grade;
@@ -73,7 +72,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
     return ("Grade too low");
 }
-// << operator overload to print name and grade
+
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &b)
 {
     out << b.getName() << ", bureaucrat grade " << b.getGrade();

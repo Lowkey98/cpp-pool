@@ -30,6 +30,6 @@ class Bureaucrat
 		std::string const _name;
 		int _grade;
 };
-// << operator overload to print name and grade
+
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &b);
 #endif // BUREAUCRAT_HPP
