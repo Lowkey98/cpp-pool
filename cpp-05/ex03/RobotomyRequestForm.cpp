@@ -34,9 +34,9 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : AForm("Rob
 
 void    RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
+    checkRequirements(executor.getGrade());
     if ((time(0) % 2) == 0)
        std::cout << "robotomy succeed" << std::endl;
     else
         std::cerr << "robotomy failed" << std::endl;
-    checkRequirements(executor.getGrade());
 }
