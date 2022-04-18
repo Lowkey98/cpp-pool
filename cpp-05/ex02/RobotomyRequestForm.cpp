@@ -34,8 +34,9 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRe
 
 void    RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-
+    if ((time(0) % 2) == 0)
+       std::cout << "robotomy succeed" << std::endl;
+    else
+        std::cerr << "robotomy failed" << std::endl;
     checkRequirements(executor.getGrade());
-    std::cout << "*Drilling noise*" << std::endl;
-    std::cout << this->_target << " has been robotomized successfully 50\% of the time" << std::endl;
 }

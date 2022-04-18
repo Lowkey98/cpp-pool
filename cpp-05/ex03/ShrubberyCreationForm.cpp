@@ -50,6 +50,5 @@ void drawTree(const std::string &target)
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
     checkRequirements(executor.getGrade());
-    // open file to write in
     drawTree(this->_target);
 }

@@ -28,14 +28,15 @@ RobotomyRequestForm::~RobotomyRequestForm()
 // parameter
 RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : AForm("RobotomyRequestForm", 72, 45) ,_target(target)
 {
-    // this->_target = target;
+    this->_target = target;
     std::cout << "RobotomyRequestForm Parameter Contructor" << std::endl;
 }
 
 void    RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-
+    if ((time(0) % 2) == 0)
+       std::cout << "robotomy succeed" << std::endl;
+    else
+        std::cerr << "robotomy failed" << std::endl;
     checkRequirements(executor.getGrade());
-    std::cout << "*Drilling noise*" << std::endl;
-    std::cout << this->_target << " has been robotomized successfully 50\% of the time" << std::endl;
 }
