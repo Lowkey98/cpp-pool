@@ -1,6 +1,6 @@
 #include <iostream>
 template <typename T>
-void iter(T *arr, int N, void (*f)(T))
+void iter(T *arr, int N, void (*f)(T const &))
 {
     for (int i = 0; i < N; i++)
         f(arr[i]);

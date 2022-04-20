@@ -1,6 +1,7 @@
 // main check if one argument only
 #include <iostream>
 #include "whatever.hpp"
+#include <algorithm>
 int main()
 {
     int a = 2;

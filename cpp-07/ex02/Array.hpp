@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 template <typename T>
 class Array
@@ -14,25 +12,17 @@ class Array
         {
             this->_size = n;
             this->_arr = new T[n];
-            for (unsigned int i = 0; i < n; i++)
-            {
-                this->_arr[i] = 0;
-            }
         }
         Array(const Array<T>& a)
         {
-            // std::cout << "Copy constructor called" << std::endl;
             *this = a;
         }
         Array <T> &operator=(const Array<T>& a)
         {
-            // std::cout << "Assignment operator called" << std::endl;
             this->_size = a._size;
             this->_arr = new T[_size];
-            // this->_size = a._size;
             for (unsigned int i = 0; i < a.size(); i++)
             {
-                // break;
                 this->_arr[i] = a._arr[i];
             }
             return *this;
@@ -51,10 +41,8 @@ class Array
             {
                 throw std::exception();
             }
-            // std::cout << "operator[]" << std::endl;
             return this->_arr[i];
-        }
-
+        }        
     private:
         T* _arr;
         unsigned int _size;

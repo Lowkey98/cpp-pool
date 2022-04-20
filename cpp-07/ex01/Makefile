@@ -1,7 +1,7 @@
 CC = c++
-SRC =   main.cpp 
+SRC =  main.cpp 
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME =  Array
+NAME =  iter
 
 all: $(NAME)
 
