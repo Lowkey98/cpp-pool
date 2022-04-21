@@ -54,3 +54,11 @@ unsigned int Span::shortestSpan() const
     }
     return (min);
 }
+
+unsigned int Span::longestSpan() const
+{
+    if (this->_size < 2)
+        throw "size too small";
+    std::sort(this->_arr, this->_arr + this->_size);
+    return abs(this->_arr[0] - this->_arr[this->_size - 1]);
+}
