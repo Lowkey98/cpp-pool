@@ -10,6 +10,7 @@ class Span
         ~Span();
         Span(unsigned int N);
         void addNumber(int number);
+        void addNumber(int *array, int size);
         unsigned int shortestSpan();
         unsigned int longestSpan();
 

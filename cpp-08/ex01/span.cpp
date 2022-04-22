@@ -33,6 +33,13 @@ void Span::addNumber(int number)
     this->_vect.push_back(number);
     this->_size++;
 }
+void Span::addNumber(int *array, int size)
+{
+    if (this->_size + size > this->_N)
+        throw "maxed size";
+    this->_vect.insert (this->_vect.begin(), array, array + size);
+    this->_size += size;
+}
 
 bool ascend(int a, int b){return a < b;}
 unsigned int Span::shortestSpan()
@@ -41,10 +48,8 @@ unsigned int Span::shortestSpan()
 
     if (this->_size < 2)
         throw "size too small";
-    // std::cout << this->_vect.size();
     std::sort(this->_vect.begin(), this->_vect.end());
-    // for (std::vector<int>::const_iterator i = this->_vect.begin(); i != this->_vect.end(); ++i)
-    //     std::cout << *i << ' ';
+
     min = abs(this->_vect[0] - this->_vect[1]);
     for (unsigned int i = 1; i < this->_size - 1;i++)
     {
@@ -52,7 +57,6 @@ unsigned int Span::shortestSpan()
             min = abs(this->_vect[i] - this->_vect[i + 1]);
     }
     return (min);
-    // return (1);
 }
 
 unsigned int Span::longestSpan()
