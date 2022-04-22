@@ -1,7 +1,7 @@
 CC = c++
 SRC =   span.cpp main.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = easyfind
+NAME = span
 
 all: $(NAME)
 

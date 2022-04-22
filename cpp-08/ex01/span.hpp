@@ -10,11 +10,11 @@ class Span
         ~Span();
         Span(unsigned int N);
         void addNumber(int number);
-        unsigned int shortestSpan() const;
-        unsigned int longestSpan() const;
+        unsigned int shortestSpan();
+        unsigned int longestSpan();
 
     private:
         unsigned int _N;
         unsigned int _size;
-        int *_arr;
+        std::vector<int> _vect;
 };
